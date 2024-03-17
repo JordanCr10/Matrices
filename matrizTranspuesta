@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+public class Matriz1 {
+    public static void main(String[] args){
+        //CREAR UNA MATRIZ 3x3, TRANSPONERLA Y MOSTRARLA
+        int matriz[][];
+        matriz = new int[3][3];
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Rellene la matriz: ");
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.println("Matriz["+i+"]["+j+"]");
+                matriz[i][j] = entrada.nextInt();
+            }
+        }
+        System.out.println("la matriz es Matriz: ");
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.print(matriz[i][j]);
+            }
+        System.out.println("");
+        }
+        System.out.println("la matriz transpuesta es: ");
+        for(int i = 0; i<3; i++){
+            for(int j = 0; j<3; j++){
+                System.out.print(matriz[j][i]);
+            }
+        System.out.println("");
+        }
+
+
+        
+
+       
+    }
+}
