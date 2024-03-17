@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+public class Matriz1 {
+    public static void main(String[] args){
+        //CREAR UNA MATRIZ NxM Y DECIR SI ES SIMETRICA O NO
+        int matriz[][], nFilas, nColumnas;
+        Scanner lector = new Scanner(System.in);
+        boolean simetrica = true;
+
+        nFilas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el # de filas: "));
+        nColumnas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el # de Columnas: "));
+
+        matriz = new int[nFilas][nColumnas];
+
+        System.out.println("Rellene la matriz: ");
+        for(int i = 0; i<nFilas; i++){
+            for(int j = 0; j<nColumnas; j++){
+                System.out.println("Matriz["+i+"]["+j+"]");
+                matriz[i][j] = lector.nextInt();
+            }
+        }
+        if(nFilas == nColumnas){
+            int i, j;
+            i = 0;        
+            while(i<nFilas && simetrica == true){
+                j = 0;
+                while(j<nColumnas && simetrica == true){
+                    if(matriz[i][j]!=matriz[j][i]){
+                        simetrica = false;
+                    }
+                    j++;
+                }
+                i++;
+            }
+            if(simetrica == true){
+                JOptionPane.showMessageDialog(null, "La matriz es simetrica");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Matriz no es simetrica");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Matriz no es simetrica");
+        }
+
+
+
+    }
+}
